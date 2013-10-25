@@ -35,6 +35,7 @@ Batch of usefull helpers for [yate](https://github.com/pasaran/yate)
 
 ##entity
 ###entity-list
+  * function-name(List, method, [value])
   * entity-scalar-list(nodeset, scalar, scalar)
   * entity-object-list(nodeset, scalar, scalar)
 
