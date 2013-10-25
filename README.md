@@ -38,23 +38,27 @@ Batch of usefull helpers for [yate](https://github.com/pasaran/yate)
   * entity-scalar-list(nodeset, scalar, scalar)
   * entity-object-list(nodeset, scalar, scalar)
 
-"listItem scalar: { entity-scalar-list(.list, 'get', 'id3') }"
-"listItem object: { entity-object-list(.list, 'get', 'id4').id }"
-"listItem object (result array): { entity-object-list(.list, 'get', 'id5').*.id }"
+Данные:
 
-List({
-                         id: 'id',
-                         type: 'type',
-                         map: ['id1', 'id2', 'id3', 'id4', 'id5'],
-                         length: 5,
-                         '0': 1,
-                         '1': 2,
-                         '2': 3,
-                         '3': {
-                              'id': 'jopa'
-                         },
-                         '4': [
-                             {'id': 'obj1'},
-                             {'id': 'obj2'}
-                         ]
-});
+    List({
+        id:     'id',
+        type:   'type',
+        map:    ['id1', 'id2', 'id3', 'id4', 'id5'],
+        length: 5,
+        '0':    1,
+        '1':    2,
+        '2':    3,
+        '3':    {
+            'id': 'jopa'
+        },
+        '4':    [
+            {'id': 'obj1'},
+            {'id': 'obj2'}
+        ]
+    });
+
+Пример использования:
+
+    "listItem scalar: { entity-scalar-list(.list, 'get', 'id3') }"
+    "listItem object: { entity-object-list(.list, 'get', 'id4').id }"
+    "listItem object (result array): { entity-object-list(.list, 'get', 'id5').*.id }"
