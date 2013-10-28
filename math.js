@@ -13,20 +13,24 @@
     };
 
     yrExternals['math-sum'] = function(nodeset) {
-        result = 0;
+        var result = 0;
         nodeset.forEach(function(item) {
             result += Number(item.data);
         });
 
         return result;
-    }
+    };
 
     yrExternals['math-procedure'] = function(list) {
         if (list.lastIndexOf(/\*|\/|\+|\-/)) {
             list = list.substr(0, list.length - 1);
         }
 
-        return (new Function('return '+list)());
+        try {
+            return (new Function('return '+list)());
+        } catch(e) {
+            return 0;
+        }
     };
 
 })(yr.externals);
