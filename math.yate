@@ -11,3 +11,6 @@ external xml math-round(scalar)
 
 // sum
 external scalar math-sum(nodeset)
+
+// evil!
+external scalar math-procedure(scalar)

@@ -21,4 +21,12 @@
         return result;
     }
 
+    yrExternals['math-procedure'] = function(list) {
+        if (list.lastIndexOf(/\*|\/|\+|\-/)) {
+            list = list.substr(0, list.length - 1);
+        }
+
+        return (new Function('return '+list)());
+    };
+
 })(yr.externals);
