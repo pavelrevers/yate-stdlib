@@ -22,6 +22,12 @@
     };
 
     yrExternals['math-procedure'] = function(list) {
+        list = list.replace(/\s/g, '');
+
+        if (!list.length) {
+            return 0;
+        }
+
         if (list.lastIndexOf(/\*|\/|\+|\-/)) {
             list = list.substr(0, list.length - 1);
         }
