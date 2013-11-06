@@ -1,3 +1,5 @@
 external scalar entity-scalar-list(nodeset, scalar, scalar)
 
 external object entity-object-list(nodeset, scalar, scalar)
+
+external nodeset nodes-unique(nodeset)

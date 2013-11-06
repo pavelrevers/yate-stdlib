@@ -20,4 +20,20 @@
         }
     };
 
+    yrExternals['nodes-unique'] = function(nodes) {
+        var cache = {},
+            results = [];
+
+        for (var i = 0, l = nodes.length, name; i < l; i++) {
+            name = nodes[i].data;
+
+            if (!cache.hasOwnProperty(name)) {
+                cache[name] = null;
+                results.push(nodes[i]);
+            }
+        }
+
+        return results;
+    };
+
 })(yr.externals);
