@@ -36,4 +36,21 @@
         return results;
     };
 
+    yrExternals['serialize'] = function(nodes) {
+        var list = [],
+            result = '';
+
+        if (nodes.length > 1) {
+            for (var i = 0, l = nodes.length; i < l; i++) {
+                list.push(nodes[i].data)
+            }
+
+            result = JSON.stringify(list);
+        } else if (nodes.length == 1) {
+            result = JSON.stringify(nodes[0].data);
+        }
+
+        return result;
+    };
+
 })(yr.externals);
