@@ -40,4 +40,33 @@
         }
     };
 
+    yrExternals['math-format-price'] = function(value, separator) {
+        var decimal,
+            decimalLength;
+
+        value = String(value);
+        separator = separator || '.';
+
+        if (value.indexOf('.') < 0) {
+            return value;
+        }
+
+        value = value.split('.');
+        decimal = value[1];
+        decimalLength = value[1].length;
+
+        if (decimalLength == 1) {
+            decimal += '0';
+        } else if (decimalLength > 1) {
+            decimal = decimal.substring(0,2);
+
+            if (decimal == '00') {
+                decimal = '';
+                separator = '';
+            }
+        }
+
+        return [value[0], separator, decimal].join('');
+    };
+
 })(yr.externals);
