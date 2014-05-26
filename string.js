@@ -108,11 +108,12 @@
         separator = separator || '.';
 
         if (value > 1) {
-            value = valueParsed[0];
+            value = String(Math.round(value));
         } else {
             decimalTrimmed = valueParsed[1].substring(0, 2);
+
             if (decimalTrimmed == '00') {
-                decimalTrimmed = valueParsed[1];
+                decimalTrimmed = 1;
             }
 
             value = [valueParsed[0], decimalTrimmed].join(separator);
